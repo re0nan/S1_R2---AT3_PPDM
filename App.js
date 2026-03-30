@@ -1,20 +1,51 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+import Home from "./src/screens/Home";
+import Produto from "./src/screens/Produto";
+import Contato from "./src/screens/Contato";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      
+      {/* navegação entre as telas */}
+      <Stack.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: "#0a84ff",
+          },
+          headerTintColor: "#fff",
+          headerTitleAlign: "center",
+        }}
+      >
+
+        {/* tela Home */}
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ title: "Início" }}
+        />
+
+        {/* tela Produtos */}
+        <Stack.Screen
+          name="Produtos"
+          component={Produtos}
+          options={{ title: "Produtos" }}
+        />
+
+        {/* tela Contato */}
+        <Stack.Screen
+          name="Contato"
+          component={Contato}
+          options={{ title: "Contato" }}
+        />
+
+      </Stack.Navigator>
+
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
