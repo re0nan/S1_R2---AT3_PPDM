@@ -9,7 +9,6 @@ export default function Produtos() {
     { id: 1, nome: 'Camisa', preco: 100, pix: 45 },
     { id: 2, nome: 'Calça', preco: 150, pix: 110 },
     { id: 3, nome: 'Tênis', preco: 350, pix: 180 },
-    { id: 4, nome: 'Boné', preco: 80, pix: 35 },
     { id: 5, nome: 'Blusa', preco: 300, pix: 220 }
   ];
 
@@ -32,7 +31,9 @@ export default function Produtos() {
           <Image
             source={{ uri: 'https://via.placeholder.com/100' }}
             style={styles.img}
-          />
+          /> 
+
+          Image
 
           <Text>{p.nome}</Text>
           <Text>R$ {p.preco}</Text>

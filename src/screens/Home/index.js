@@ -10,6 +10,7 @@ export default function Home({ navigation }) {
         style={styles.logo}
       />
 
+      
       <Text style={styles.titulo}>Loja Exemplo</Text>
 
       <Text style={styles.texto}>
